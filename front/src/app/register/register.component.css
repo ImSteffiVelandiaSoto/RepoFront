@@ -1,0 +1,98 @@
+/* Contenedor general */
+.container {
+  position: relative;
+  height: 100vh;
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Canvas animado */
+.canvas-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, #082c54 0%, #121212 80%);
+  animation: rotateBg 120s linear infinite;
+}
+
+/* Caja del formulario */
+.form-box {
+  position: relative;
+  padding: 40px 30px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+h2 {
+  margin-bottom: 24px;
+  color: #0078d7;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Grupos de inputs */
+.input-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #e5e5e5;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input {
+  padding: 10px 14px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #e5e5e5;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0078d7;
+  background: #222;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #0078d7;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #005a9e;
+  transform: translateY(-2px);
+}
+
+/* Animación de fondo */
+@keyframes rotateBg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
